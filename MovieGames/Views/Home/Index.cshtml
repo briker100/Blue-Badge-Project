@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+
+    <Style>
+        .Square {
+            opacity: .5;
+            background-color: grey;
+            background-image: url('../../Images/1.jpg');
+            background-size: contain;
+            background-repeat: repeat;
+        }
+        .row {
+            opacity:100;
+            text-align:center;
+            border-bottom: 2px solid black;
+            border-top: 2px solid black;
+            border-right: 2px solid black;
+            border-left: 2px solid black;
+
+        }
+        body {
+            opacity: .7;
+            background-image: url('../../Images/Screen.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+
+
+    </Style>
+    <div class="Square" id="Square">
+        <center><h1 id="Text">Movies</h1></center>
+        <center><p class="Text"style="font-weight:bold;">If You cant remember what movies are in theaters This app is for You. This will help You Find Movies and what Theater They are in.</p></center>
+        <center><p><a href="https://www.imdb.com/title/tt7349662/" class="btn btn-block btn-lg">Movie Details</a></p></center>
+    </div>
+
+
+    <div class="row"style="font-weight:bold";>
+        <center><h1>Top Movies</h1></center>
+        <div class="col-md-4"style="font-weight:bold";>
+
+            <h2>Happy Time Murders</h2>
+            <p>
+                When the puppet cast of an '80s children's TV show begins to get murdered one by one, a disgraced LAPD detective-turned-private eye puppet takes on the case.
+            </p>
+            <div>
+                <br />
+                <br />
+                <br />
+
+                <img src="~/Images/happy.jpg" width="250" height="250" />
+            </div>
+            <p><a class="btn btn-default" href="https://www.imdb.com/title/tt1308728/">Movie Details &raquo;</a></p>
+        </div>
+        <div class="col-md-4"style="font-weight:bold";>
+            <h2>Christopher Robin</h2>
+            <p>An adult Christopher Robin, who is now focused on his new life, work, and family, suddenly meets his old friend Winnie the Pooh, who returns to his unforgotten childhood past to help him return to the Hundred Acre Wood and help find Pooh's lost friends.</p>
+            <div>
+                <br />
+
+                <img src="~/Images/Christopher-Robin-movie-trailer-3.jpg" width="250" height="250" />
+            </div>
+            <p><a class="btn btn-default" href="https://www.imdb.com/title/tt4575576/?ref_=ttpl_pl_tt">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4"style="font-weight:bold";>
+            <h2>BlackKkKlans</h2>
+            <p>Ron Stallworth, an African-American police officer from Colorado, successfully manages to infiltrate the local Ku Klux Klan with the help of a white surrogate, who eventually becomes head of the local branch.</p>
+            <div>
+                <br />
+                <br />
+
+
+                <img src="~/Images/blackkklansmen.jpg" width="250" height="250" />
+            </div>
+            <p><a class="btn btn-default" href="https://www.imdb.com/title/tt7349662/">Movie Details  &raquo;</a></p>
+        </div>
+    </div>
+
+}

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MovieGames.Models.TheaterListItem>
+
+@{
+    ViewBag.Title = "AdminIndex";
+}
+<style>
+
+    body {
+        background-color: lightgray;
+    }
+</style>
+<h2>Theaters</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+
+
+
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TheaterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TheaterLocation)
+        </th>
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheaterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheaterLocation)
+            </td>
+
+            <td>
+                <ul div class="Something">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customize &raquo;</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.TheaterId })
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    @Html.ActionLink("Details", "Details", new { id = item.TheaterId })
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.TheaterId })
+                                </a>
+                            </li>
+                        </ul>
+                </ul>
+        </tr>
+    }
+</table>

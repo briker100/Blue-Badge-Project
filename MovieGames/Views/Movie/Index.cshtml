@@ -1,0 +1,95 @@
+﻿@model IEnumerable<MovieGames.Models.MovieListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+
+<style>
+
+    body {
+        background-color: lightgray;
+    }
+</style>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedUtc)
+            </td>
+
+            <td>
+                <ul div class="Something">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customize &raquo;</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.MovieId })
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    @Html.ActionLink("Details", "Details", new { id = item.MovieId })
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.MovieId })
+                                </a>
+                            </li>
+                        </ul>
+                </ul>
+            </td>
+        </tr>
+    }
+
+</table>
+

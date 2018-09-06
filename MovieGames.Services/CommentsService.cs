@@ -121,15 +121,14 @@ namespace MovieGames.Services
                 return CommentList;
             }
         }
-
         public bool DeleteComment(int CommentId)
-        {   
+        {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =    
                     ctx
                         .Comments       
-                        .Single(e => e.CommentId == CommentId && e.UserId == _userId);
+                        .Single(e => e.CommentId == CommentId);
 
                 ctx.Comments.Remove(entity);  
 

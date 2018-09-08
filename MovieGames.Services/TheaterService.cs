@@ -46,6 +46,7 @@ namespace MovieGames.Services
                             e =>
                                 new TheaterListItem
                                 {
+                                    TheaterId = e.TheaterId,
                                     TheaterName = e.TheaterName,
                                     TheaterLocation = e.TheaterLocation,
                                     CreatedUtc = e.CreatedUtc
@@ -59,7 +60,7 @@ namespace MovieGames.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var entity =    
                     ctx
                         .Theater
                         .Single(e => e.TheaterId == id && e.OwnerId == _userId);

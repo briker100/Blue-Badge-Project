@@ -9,6 +9,7 @@ namespace MovieGames.Models
 {
     public class TheaterListItem
     {
+        [Key]
         public int TheaterId { get; set; }
         public string TheaterName { get; set; }
         public string TheaterLocation { get; set; }
